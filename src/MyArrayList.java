@@ -28,7 +28,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
     public void EnsureCapacity() {
         if (size == data.length) {
             E[] newData = (E[]) (new Object[size * 2 + 1]);
-            System.arraycopy(data, 0, data2, 0, size);
+            System.arraycopy(data, 0, newData, 0, size);
             data = newData;
         }
     }
@@ -64,9 +64,10 @@ public class MyArrayList<E> extends MyAbstractList<E> {
     public int indexOf(E e) {
         for (int i = 0 ; i < size ; i++) {
             if (e.equals(data[i])); {
-                return true;
+                return 0;
             }
         }
+        return 0;
     }
 
     @Override
@@ -92,4 +93,19 @@ public class MyArrayList<E> extends MyAbstractList<E> {
 
         return e;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("[");
+
+        for (int i = 0; i < size; i++) {
+            result.append(data[i]);
+            if (i < size-1) {
+                result.append(", ");
+            }
+        }
+
+        return result.toString() + "]";
+    }
+
 }
