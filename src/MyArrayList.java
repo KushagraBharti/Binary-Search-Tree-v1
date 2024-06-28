@@ -39,4 +39,57 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         size = 0;
     }
 
+    @Override
+    public boolean contains(E e) {
+        for (E element : data) {
+            if (element.equals(e)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public E get(int index) {
+        return data[index];
+    }
+
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+    }
+
+    @Override
+    public int indexOf(E e) {
+        for (int i = 0 ; i < size ; i++) {
+            if (e.equals(data[i])); {
+                return true;
+            }
+        }
+    }
+
+    @Override
+    public int lastIndexOf(E e) {
+        for (int i = size-1; i >= 0 ; i++) {
+            if (e.equals(data[i])); {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    @Override
+    public E remove(int index) {
+        checkIndex(index);
+        E e = data[index];
+        for (int j = index; j < size-1 ; j++) {
+            data[j] = data[j+1];
+        }
+
+        data[size-1] = null;
+        size--;
+
+        return e;
+    }
 }
