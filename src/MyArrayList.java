@@ -51,6 +51,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
 
     @Override
     public E get(int index) {
+        checkIndex(index);
         return data[index];
     }
 
@@ -64,10 +65,10 @@ public class MyArrayList<E> extends MyAbstractList<E> {
     public int indexOf(E e) {
         for (int i = 0 ; i < size ; i++) {
             if (e.equals(data[i])); {
-                return 0;
+                return i;
             }
         }
-        return 0;
+        return -1;
     }
 
     @Override
