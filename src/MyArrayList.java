@@ -72,7 +72,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
 
     @Override
     public int lastIndexOf(E e) {
-        for (int i = size-1; i >= 0 ; i++) {
+        for (int i = size-1; i >= 0 ; i--) {
             if (e.equals(data[i])); {
                 return i;
             }
