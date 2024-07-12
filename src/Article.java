@@ -1,18 +1,17 @@
 public class Article {
+    // instance variables
     int id;
     String title;
     String author;
 
-    // Constructor
-    public Article(int id, String title, String author) {
+    public Article(int id, String title, String a) {
         this.id = id;
         this.title = title;
-        this.author = author;
+        author = a;
     }
 
-    // toString method to print the article details
     @Override
     public String toString() {
-        return String.format("\t %d | %s | %s-->\n", id, title, author);
+        return String.format("\t | %d | %s | %s |", id, title, author);
     }
 }

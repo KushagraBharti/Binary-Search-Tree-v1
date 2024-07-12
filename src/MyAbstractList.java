@@ -1,18 +1,18 @@
-public abstract class MyAbstractList<E> implements MyList<E>{
+public abstract class MyAbstractList<E> implements MyList<E> {
     protected int size = 0;
 
-    protected MyAbstractList(){} // Default Constructor
+    protected MyAbstractList() { }  // default constructor
 
-    protected MyAbstractList(E[] objects){  // Value Constructor
-        for(E element : objects){
+    protected MyAbstractList(E[] objects) { // value constructor
+        for (E element : objects) {
             add(element);
         }
     }
 
     @Override
-    public void add(E e){
+    public void add(E e) {
         add(size, e);
-    };
+    }
 
     @Override
     public boolean isEmpty() {
@@ -20,14 +20,12 @@ public abstract class MyAbstractList<E> implements MyList<E>{
     }
 
     @Override
-    public int size(){
-        return size;
-    }
+    public int size() { return size; }
 
     @Override
-    public boolean remove(E e){
+    public boolean remove(E e) {
         int index = indexOf(e);
-        if( index >= 0){
+        if (index >= 0) {
             remove(index);
             return true;
         }
