@@ -12,6 +12,6 @@ public class Article {
 
     @Override
     public String toString() {
-        return String.format("\t | %d | %s | %s |", id, title, author);
+        return String.format("| %d | %s | %s |", id, title, author);
     }
 }

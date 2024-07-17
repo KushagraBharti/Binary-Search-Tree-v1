@@ -28,27 +28,20 @@ public class MyLinkedList <E> extends MyAbstractList <E> {
     public void add(int index, E e) { }
 
     @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder("\t→");
-
+    public String toString(){
+        StringBuilder result = new StringBuilder("");
         Node<E> current = head;
-
-        if (current != null)
+        if(current != null){
             result.append("\t→");
-
-        while(current != null) {
-
+        }
+        while(current != null ){
             result.append(current.element);
             current = current.next;
-
-            if (current != null) {
+            if(current != null){
                 result.append("\n\t→");
             }
         }
-
         return result.toString();
     }
-
-
 }
 

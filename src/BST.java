@@ -22,19 +22,19 @@ public class BST<E extends Comparable<E>> {
                 }
                 else {
                     // add the Article
+                    current.list.addFirst(a);
                     return;
                 }
             }
 
             if (e.compareTo(parent.element) < 0) {
                 parent.left = new TreeNode<E>(e);
-                parent.left.list.addFirst(e);
+                parent.left.list.addFirst(a);
             }
-            else {
+            else{
                 parent.right = new TreeNode<E>(e);
-                parent.right.list.addFirst(e);
+                parent.right.list.addFirst(a);
             }
-
         }
     }
 
@@ -49,19 +49,12 @@ public class BST<E extends Comparable<E>> {
         inorder(root);
     }
 
-    protected void inorder(TreeNode<E> root) {
-        if (root == null) return;
-        inorder(root.left);
-        System.out.print(root.element);
-        System.out.println();
-        inorder(root.right);
+    protected void inorder(TreeNode<E> current) {
+        if (current == null)
+            return;
+        inorder(current.left);
+        System.out.printf("%s\n", current.element);
+        System.out.printf("%s\n", current.list);
+        inorder(current.right);
     }
 }
-
-
-
-
-
-
-
-
