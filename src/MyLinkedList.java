@@ -26,22 +26,5 @@ public class MyLinkedList <E> extends MyAbstractList <E> {
     public boolean contains(E e) { return false;}
     public void clear() { } // will clear the list
     public void add(int index, E e) { }
-
-    @Override
-    public String toString(){
-        StringBuilder result = new StringBuilder("");
-        Node<E> current = head;
-        if(current != null){
-            result.append("\t→");
-        }
-        while(current != null ){
-            result.append(current.element);
-            current = current.next;
-            if(current != null){
-                result.append("\n\t→");
-            }
-        }
-        return result.toString();
-    }
 }
 

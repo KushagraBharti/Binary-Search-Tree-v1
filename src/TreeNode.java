@@ -2,10 +2,10 @@ class TreeNode<E> {
     protected E element;
     protected TreeNode<E> left;
     protected TreeNode<E> right;
-    //protected Node<Article> head;
-    protected MyLinkedList<Article> list;
+    protected Node<Article> head;
+
     public TreeNode(E e) {
         element = e;
-        list = new MyLinkedList<>();
+        head = null; // Initialize the head of the list to null
     }
 }
